@@ -1,1 +1,0 @@
-This is to save the models. Each file has 4 parts: the training python file (python), the training log file (excel), the training loss and accuracy plot (png), and the saved model parameters (pickle or pth).
