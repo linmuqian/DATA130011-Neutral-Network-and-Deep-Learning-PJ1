@@ -10,7 +10,7 @@ import pickle
 np.random.seed(309)
 
 train_images_path = r'dataset/MNIST/train-images-idx3-ubyte.gz'
-train_labels_path = r'/MNIST/train-labels-idx1-ubyte.gz'
+train_labels_path = r'dataset/MNIST/train-labels-idx1-ubyte.gz'
 
 # read training images
 with gzip.open(train_images_path, 'rb') as f:
@@ -46,7 +46,7 @@ runner = nn.runner.RunnerM_c(model, optimizer, nn.metric.accuracy, loss_fn, sche
 
 save_dir = r'best_models/model_lenet_converge'
 
-runner.train([train_imgs, train_labs], [valid_imgs, valid_labs], num_epochs=5, log_iters=10, save_dir=save_dir)
+runner.train([train_imgs, train_labs], [valid_imgs, valid_labs], num_epochs=10, log_iters=10, save_dir=save_dir)
 
 _, axes = plt.subplots(1, 2)
 axes.reshape(-1)

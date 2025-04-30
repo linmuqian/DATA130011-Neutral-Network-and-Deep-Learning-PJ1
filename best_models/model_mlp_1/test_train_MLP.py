@@ -11,8 +11,8 @@ import pickle
 # fixed seed for experiment
 np.random.seed(309)
 
-train_images_path = r'.\codes\dataset\MNIST\train-images-idx3-ubyte.gz'
-train_labels_path = r'.\codes\dataset\MNIST\train-labels-idx1-ubyte.gz'
+train_images_path = r'dataset/MNIST/train-images-idx3-ubyte.gz'
+train_labels_path = r'dataset/MNIST/train-labels-idx1-ubyte.gz'
 
 with gzip.open(train_images_path, 'rb') as f:
         magic, num, rows, cols = unpack('>4I', f.read(16))
@@ -46,7 +46,7 @@ loss_fn = nn.op.MultiCrossEntropyLoss(model=linear_model, max_classes=train_labs
 
 runner = nn.runner.RunnerM(linear_model, optimizer, nn.metric.accuracy, loss_fn, scheduler=scheduler)
 
-save_dir = r'./codes/best_models/model_mlp_1'
+save_dir = r'best_models/model_mlp_1'
 
 runner.train([train_imgs, train_labs], [valid_imgs, valid_labs], num_epochs=5, log_iters=100, save_dir=save_dir)
 
