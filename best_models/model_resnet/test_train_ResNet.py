@@ -27,10 +27,10 @@ with gzip.open(train_labels_path, 'rb') as f:
 idx = np.random.permutation(np.arange(num))
 train_imgs = train_imgs[idx]
 train_labs = train_labs[idx]
-valid_imgs = train_imgs[:300]
-valid_labs = train_labs[:300]
-train_imgs = train_imgs[1000:6000]
-train_labs = train_labs[1000:6000]
+valid_imgs = train_imgs[:500]
+valid_labs = train_labs[:500]
+train_imgs = train_imgs[10000:30000]
+train_labs = train_labs[10000:30000]
 
 # normalize from [0, 255] to [0, 1]
 train_imgs = train_imgs / train_imgs.max()
