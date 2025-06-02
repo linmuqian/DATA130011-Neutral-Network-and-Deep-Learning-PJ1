@@ -1,5 +1,5 @@
 # 2025DL-PJ1
-This is the Project 1 of Neutral Network and Deep Learning 2025 of Fudan University.
+This is the Project 1 of DATA130011.01 Neutral Network and Deep Learning 2025 of Fudan University.
 
 `mynn` is about hand-writing torch classes. The detailed information please read my report for this PJ.
 
