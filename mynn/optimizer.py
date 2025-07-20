@@ -22,7 +22,7 @@ class SGD(Optimizer):
                 for key in layer.params.keys():
                     if layer.weight_decay:
                         layer.params[key] *= (1 - self.lr * layer.weight_decay_lambda)
-                    layer.params[key] = layer.params[key] - self.lr * layer.grads[key]
+                    layer.params[key] -= self.lr * layer.grads[key]
 
 
 class MomentGD(Optimizer):
@@ -54,6 +54,7 @@ class MomentGD(Optimizer):
                     if layer.weight_decay:
                         layer.params[key] *= (1 - self.lr * layer.weight_decay_lambda)
                     layer.params[key] -= self.velocities[layer_name][key]
+
 
 class Adam(Optimizer):
     def __init__(self, init_lr=1e-3, model=None, beta1=0.9, beta2=0.999, eps=1e-8):
